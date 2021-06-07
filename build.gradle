@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    implementation('com.alibaba:easyexcel:2.2.6')
+    implementation 'org.apache.commons:commons-lang3:3.11'
+    implementation 'io.netty:netty-all:4.1.65.Final'
+}
