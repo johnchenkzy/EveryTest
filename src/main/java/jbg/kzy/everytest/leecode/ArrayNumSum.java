@@ -36,5 +36,26 @@ package jbg.kzy.everytest.leecode;
  * @author ckh
  * @since 2021/6/7.
  */
+
 public class ArrayNumSum {
+    public int count = 0;
+
+    public static void main(String[] args) {
+        ArrayNumSum arrayNumSum = new ArrayNumSum();
+        System.out.println(arrayNumSum.calculateArray(new int[]{1, 1, 1, 1, 1}, 3));
+    }
+    public int calculateArray(int[] nums, int target) {
+        doCount(nums, 0, 0, target);
+        return count;
+    }
+
+    public void doCount(int[] nums, int sum, int index, int target) {
+        if (index == nums.length && sum == target) {
+            count++;
+            return;
+        } else {
+            sum += nums[index];
+            doCount(nums, sum, ++index, target);
+        }
+    }
 }
